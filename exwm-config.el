@@ -7,8 +7,8 @@
 
 ;;; Setup, configuration
 
-(setq exwm-config--exwm-loaded (require 'exwm))
-(setq exwm-config--exwm-systemtray-loaded (require 'exwm-systemtray))
+(setq exwm-config--exwm-loaded (cond ((locate-library "exwm") (require 'exwm))))
+(setq exwm-config--exwm-systemtray-loaded (cond ((locate-library "exwm") (require 'exwm-systemtray nil nil))))
 
 (when exwm-config--exwm-loaded (exwm-enable))
 (when exwm-config--exwm-systemtray-loaded (exwm-systemtray-enable))
