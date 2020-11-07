@@ -1,9 +1,9 @@
 ;;; Requires
-(require 'exwm-config "~/.emacs.d/exwm-config.el")
+(require 'exwm-config "~/.config/emacs/exwm-config.el")
 ;;; Variables
 (custom-set-variables
  ;; Maybe this should be ~/.local/share/emacs or ~/.cache/emacs.
- '(backup-directory-alist '(("." . "~/.emacs.d/backups")))
+ '(backup-directory-alist '(("." . "~/.config/emacs/backups")))
  '(blink-cursor-mode t)
  '(column-number-indicator-zero-based nil)
  '(column-number-mode t)
