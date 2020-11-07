@@ -15,7 +15,7 @@
 
 (when exwm-config--exwm-loaded
   (setq display-time-default-load-average nil
-	display-time-format " [%R]"
+	display-time-format " [%R] "
 	exwm-input-global-keys
 	`((,(kbd "<XF86AudioLowerVolume>") . exwm-config--alsa-message-volume-value)
 	  (,(kbd "<XF86AudioRaiseVolume>") . exwm-config--alsa-message-volume-value)
