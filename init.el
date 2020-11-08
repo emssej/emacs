@@ -2,34 +2,45 @@
 (require 'exwm-config "~/.config/emacs/exwm-config.el")
 ;;; Variables
 (custom-set-variables
- ;; Maybe this should be ~/.local/share/emacs or ~/.cache/emacs.
  '(backup-directory-alist '(("." . "~/.config/emacs/backups")))
  '(blink-cursor-mode t)
  '(column-number-indicator-zero-based nil)
  '(column-number-mode t)
  '(cursor-type 'bar)
+ '(custom-enabled-themes '(modus-operandi))
+ '(custom-safe-themes '(default "modus-operandi"))
  '(global-so-long-mode t)
  '(global-tab-line-mode t)
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
+ '(modus-operandi-theme-bold-constructs t)
+ '(modus-operandi-theme-faint-syntax t)
+ '(modus-operandi-theme-slanted-constructs t)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
  '(mouse-yank-at-point t)
  '(prog-mode-hook
    '(flyspell-prog-mode display-line-numbers-mode electric-pair-mode show-paren-mode hl-line-mode))
- '(rcirc-authinfo '(("rizon" nickserv "" "")))
- '(rcirc-fill-flag nil)
- '(rcirc-log-flag t)
- '(rcirc-server-alist
-   '(("" :nick "" :port 9999 :user-name "" :full-name "" :channels
-      ("" "")
-      :encryption tls :server-alias "")))
- '(rcirc-time-format "[%H:%M:%S] ")
- '(rcirc-track-minor-mode t)
  '(safe-local-variable-values '((eval outline-hide-sublevels 6)))
  '(savehist-mode t)
  '(select-enable-primary t)
  '(size-indication-mode t)
+ '(tab-line-close-tab-function 'kill-buffer)
+ '(tab-line-exclude-modes nil)
+ '(tab-line-tabs-function
+   '(lambda nil
+      (seq-filter
+       (lambda
+	 (buffer)
+	 (when
+	     (not
+	      (string=
+	       (substring
+		(buffer-name buffer)
+		0 1)
+	       " "))
+	   buffer))
+       (buffer-list))))
  '(text-mode-hook
    '(turn-on-flyspell turn-on-auto-fill text-mode-hook-identify delete-selection-mode))
  '(tool-bar-mode nil))
