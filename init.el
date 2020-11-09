@@ -40,7 +40,13 @@
 		0 1)
 	       " "))
 	   buffer))
-       (buffer-list))))
+       (sort
+	(buffer-list)
+	(lambda
+	  (first last)
+	  (string<
+	   (buffer-name first)
+	   (buffer-name last)))))))
  '(text-mode-hook
    '(turn-on-flyspell turn-on-auto-fill text-mode-hook-identify delete-selection-mode))
  '(tool-bar-mode nil))
