@@ -8,7 +8,7 @@
  '(column-number-mode t)
  '(cursor-type 'bar)
  '(custom-enabled-themes '(modus-operandi))
- '(custom-safe-themes '(default "modus-operandi"))
+ '(custom-safe-themes t)
  '(global-so-long-mode t)
  '(global-tab-line-mode t)
  '(inhibit-startup-screen t)

@@ -64,7 +64,7 @@
                 width width*
                 height height*)))
       (when (bound-and-true-p tab-line-mode)
-	(setq y (+ y (frame-char-height))))
+	(setq y (+ 2 y (frame-char-height))))
       (exwm--set-geometry id x y width height)
       (xcb:+request exwm--connection (make-instance 'xcb:MapWindow :window id))
       (exwm-layout--set-state id xcb:icccm:WM_STATE:NormalState)
@@ -85,7 +85,7 @@
   "Raise the ALSA volume and display current percentage."
   (interactive)
   (shell-command-to-string "amixer -q set Master 5%+")
-  (message "[ALSA] Volume at %s"
+  (message "Volume at %s"
 	   (let ((output (shell-command-to-string "amixer -M get Master")))
 	     (save-match-data
 	       (string-match "\\([0-9]+%\\)" output)
@@ -95,7 +95,7 @@
   "Lower the ALSA volume and display current percentage."
   (interactive)
   (shell-command-to-string "amixer -q set Master 5%-")
-  (message "[ALSA] Volume at %s"
+  (message "Volume at %s"
 	   (let ((output (shell-command-to-string "amixer -M get Master")))
 	     (save-match-data
 	       (string-match "\\([0-9]+%\\)" output)
@@ -105,7 +105,7 @@
   "Get the current volume state."
   (interactive)
   (shell-command-to-string "amixer -q set Master toggle")
-  (message "[ALSA] Volume %s"
+  (message "Volume %s"
 	   (substring (let ((output (shell-command-to-string "amixer get Master")))
 			(save-match-data
 			  (string-match "\\(\\[on\\]\\|\\[off\\]\\)" output)
