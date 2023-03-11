@@ -10,6 +10,7 @@
 (when exwm-init--exwm-systemtray-loaded (exwm-systemtray-enable))
 
 (when exwm-init--exwm-loaded
+  (add-hook 'exwm-update-class-hook (lambda nil (exwm-workspace-rename-buffer exwm-class-name)))
   (custom-set-variables
    '(display-battery-mode t)
    '(display-time-format " [%R]")
