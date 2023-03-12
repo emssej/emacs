@@ -19,6 +19,14 @@
  '(cursor-type 'bar)
  '(custom-enabled-themes '(modus-operandi))
  '(custom-safe-themes t)
+ '(display-battery-mode t)
+ '(display-time-format " [%R]")
+ '(display-time-mode t)
+ '(exwm-input-global-keys
+   `((,(kbd "M-<f2>")
+      . exwm-init--start-program)
+     (,(kbd "M-<f4>")
+      . kill-this-buffer)))
  '(global-so-long-mode t)
  '(global-tab-line-mode t)
  '(inhibit-startup-screen t)
@@ -33,6 +41,7 @@
    '(flyspell-prog-mode display-line-numbers-mode electric-pair-mode show-paren-mode hl-line-mode))
  '(safe-local-variable-values '((eval outline-hide-sublevels 6)))
  '(savehist-mode t)
+ '(scroll-bar-mode nil)
  '(select-enable-primary t)
  '(size-indication-mode t)
  '(tab-line-close-tab-function 'kill-buffer)
@@ -66,3 +75,9 @@
 (provide 'init)
 
 ;;; init.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
