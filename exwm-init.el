@@ -15,8 +15,8 @@
    '(display-time-format " [%R]")
    '(display-time-mode t)
    '(exwm-input-global-keys
-     `((,(kbd "M-<f2>") . exwm-init--start-program)
-       (,(kbd "M-<f4>") . kill-this-buffer)))
+     `((,(kbd "s-<f2>") . exwm-init--start-program)
+       (,(kbd "s-<f4>") . kill-this-buffer)))
    '(scroll-bar-mode nil)))
 
 ;;; Workaround so EXWM can show the tab line.
