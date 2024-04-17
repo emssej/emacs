@@ -3,8 +3,6 @@
 ;;; Commentary:
 ;; 
 
-(require 'exwm-init "~/.config/emacs/exwm-init.el")
-
 ;;; Code:
 
 (custom-set-variables
